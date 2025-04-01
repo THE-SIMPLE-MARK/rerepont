@@ -22,7 +22,7 @@ const eanSchema = z
 	.regex(/^\d+$/, "A vonalkód csak számokat tartalmazhat.")
 	.length(13, "A vonalkódnak 13 számjegyből kell állnia.")
 
-const getErrorMessage = (result: z.SafeParseError<any>): string =>
+const getErrorMessage = (result: z.SafeParseError<string>): string =>
 	result.error.errors[0]?.message ?? "Érvénytelen vonalkód"
 
 export default function Form() {
